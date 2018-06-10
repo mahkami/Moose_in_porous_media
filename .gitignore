@@ -1,0 +1,8 @@
+*.e*
+*.csv
+*peacock_run_tmp*
+~$*
+
+# Allow .csv and .e in results folder
+!/results/*/*.csv
+!/results/*/*.e
