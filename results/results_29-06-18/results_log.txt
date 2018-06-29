@@ -1,0 +1,130 @@
+
+line:0.122
+total_volume = 1
+paired_id_volume = 0.488014
+total_nb_elem = 3631880
+total_volume_to_change = 0.122
+
+current_paired_id_volume = 0.488014
+volume_changed = 0
+volume_to_change = 0.122
+layer of nb element =441444
+layer_volume = 0.121547
+
+current_paired_id_volume = 0.609561
+volume_changed = 0.121547
+volume_to_change = 0.000453033
+layer of nb element =468930
+layer_volume = 0.129115
+Framework Information:
+MOOSE Version:           git commit 8cc7b6d79a on 2018-06-20
+LibMesh Version:         ceb1e02bee97b3758bfcdc37cb87bc8954a89030
+PETSc Version:           3.7.6
+Current Time:            Fri Jun 29 13:42:52 2018
+Executable Timestamp:    Fri Jun 29 13:16:49 2018
+
+Parallelism:
+  Num Processors:          1
+  Num Threads:             1
+
+Mesh:
+  Parallel Type:           replicated
+  Mesh Dimension:          2
+  Spatial Dimension:       2
+  Nodes:
+    Total:                 1661691
+    Local:                 1661691
+  Elems:
+    Total:                 1418026
+    Local:                 1418026
+  Num Subdomains:          1
+  Num Partitions:          1
+
+Nonlinear System:
+  Num DOFs:                4985073
+  Num Local DOFs:          4985073
+  Variables:               { "vel_x" "vel_y" "p" }
+  Finite Element Types:    "LAGRANGE"
+  Approximation Orders:    "FIRST"
+
+Execution Information:
+  Executioner:             Steady
+  Solver Mode:             Preconditioned JFNK
+  Preconditioner:          asm
+
+
+
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | vel_avg        | vol_pores      |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   3.904386e-01 |
++----------------+----------------+----------------+
+
+ 0 Nonlinear |R| = 4.082891e+01
+      0 Linear |R| = 4.082891e+01
+      1 Linear |R| = 5.610055e-13
+  Linear solve converged due to CONVERGED_ATOL iterations 1
+ 1 Nonlinear |R| = 4.533284e-05
+      0 Linear |R| = 4.533284e-05
+      1 Linear |R| = 6.849485e-14
+  Linear solve converged due to CONVERGED_ATOL iterations 1
+ 2 Nonlinear |R| = 4.197484e-12
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+
+Outlier Variable Residual Norms:
+  p: 4.197484e-12
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | vel_avg        | vol_pores      |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   3.904386e-01 |
+|   1.000000e+00 |  -1.009388e-05 |   3.904386e-01 |
++----------------+----------------+----------------+
+
+
+ -------------------------------------------------------------------------------------------------------------------------
+| Redback Performance: Alive time=3618.1, Active time=3609.62                                                             |
+ -------------------------------------------------------------------------------------------------------------------------
+| Event                                      nCalls     Total Time  Avg Time    Total Time  Avg Time    % of Active Time  |
+|                                                       w/o Sub     w/o Sub     With Sub    With Sub    w/o S    With S   |
+|-------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                         |
+|                                                                                                                         |
+| Application                                                                                                             |
+|   Full Runtime                             1          5.1403      5.140304    3609.6200   3609.620012 0.14     100.00   |
+|                                                                                                                         |
+| Execution                                                                                                               |
+|   computeKernels()                         10         293.9681    29.396810   293.9681    29.396810   8.14     8.14     |
+|   computeNodalBCs()                        10         11.1547     1.115469    11.1547     1.115469    0.31     0.31     |
+|   computeUserObjects(INITIAL)              1          10.6113     10.611292   10.6113     10.611292   0.29     0.29     |
+|   computeUserObjects(TIMESTEP_END)         1          9.9319      9.931906    9.9319      9.931906    0.28     0.28     |
+|   compute_jacobian()                       2          256.8063    128.403172  256.8063    128.403172  7.11     7.11     |
+|   compute_residual()                       10         6.8848      0.688476    312.0076    31.200758   0.19     8.64     |
+|   solve()                                  1          2729.6686   2729.668601 3298.4825   3298.482526 75.62    91.38    |
+|                                                                                                                         |
+| Output                                                                                                                  |
+|   CSV::output()                            2          0.0200      0.010013    0.0200      0.010013    0.00     0.00     |
+|   Exodus::output()                         2          9.3974      4.698719    9.3974      4.698719    0.26     0.26     |
+|                                                                                                                         |
+| Setup                                                                                                                   |
+|   Application Setup                        1          185.6239    185.623881  254.6684    254.668390  5.14     7.06     |
+|   FEProblemBase::init::meshChanged()       1          2.6522      2.652172    2.6522      2.652172    0.07     0.07     |
+|   Initial updateActiveSemiLocalNodeRange() 1          0.7585      0.758452    0.7585      0.758452    0.02     0.02     |
+|   Initial updateGeomSearch()               2          0.0000      0.000002    0.0000      0.000002    0.00     0.00     |
+|   NonlinearSystem::update()                1          0.0641      0.064083    0.0641      0.064083    0.00     0.00     |
+|   Read Mesh                                1          13.5622     13.562223   13.5622     13.562223   0.38     0.38     |
+|   eq.init()                                1          52.7660     52.766027   52.7660     52.766027   1.46     1.46     |
+|   execMultiApps()                          1          0.0018      0.001810    0.0018      0.001810    0.00     0.00     |
+|   execTransfers()                          1          0.0000      0.000001    0.0000      0.000001    0.00     0.00     |
+|   initial adaptivity                       1          0.0019      0.001890    0.0019      0.001890    0.00     0.00     |
+|   initialSetup()                           1          13.2984     13.298423   31.9794     31.979422   0.37     0.89     |
+|   reinit() after updateGeomSearch()        1          0.0000      0.000001    0.0000      0.000001    0.00     0.00     |
+|                                                                                                                         |
+| Utility                                                                                                                 |
+|   projectSolution()                        1          7.3075      7.307545    7.3075      7.307545    0.20     0.20     |
+ -------------------------------------------------------------------------------------------------------------------------
+| Totals:                                    54         3609.6200                                       100.00            |
+ -------------------------------------------------------------------------------------------------------------------------

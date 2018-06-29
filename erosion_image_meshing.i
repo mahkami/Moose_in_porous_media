@@ -4,14 +4,12 @@
 [Mesh]
   type = GeneratedMesh
   dim = 2
-  nx = 833
-  ny = 1090
+  nx = 1666 #833
+  ny = 2180 #1090
   #nz = 80
   elem_type = QUAD
   block_name = 'pores grains'
   block_id = '1 0'
-  boundary_name = grains_edges
-  boundary_id = 10
 []
 
 [MeshModifiers]
@@ -23,21 +21,6 @@
     # file_range = '32'
     # file_suffix = png
     file = myGeomtry/image.png
-  [../]
-  #tags the interface pore-grain
-  #the interface's normal points outward from pore to grains
-  [./interface]
-    type = SideSetsBetweenSubdomains
-    master_block = 1
-    paired_block = 0
-    new_boundary = 10
-    depends_on = image
-  [../]
-  #deletes one of the blocks
-  [./delete]
-    type = BlockDeleter
-    depends_on = interface
-    block_id = 0
   [../]
 []
 
@@ -65,7 +48,7 @@
 []
 
 [Outputs]
-  file_base = myGeomtry_by2
+  file_base = myGeomtry_fullres
   execute_on = 'timestep_end'
   exodus = true
 []
